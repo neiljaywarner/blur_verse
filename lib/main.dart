@@ -56,11 +56,23 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
             ),
-            Slider(
-              value: blurValue,
-              max: 20,
-              onChanged: (double value) => setState(() => blurValue = value),
+            ButtonBar(
+              children:
+                  [
+                    TextButton(onPressed: () {
+                      setState(() {
+                        blurValue++;
+                      });
+                    }, child: const Text('Blur More'),),
+                    TextButton(onPressed: () {
+                      setState(() {
+                        blurValue--;
+                      });
+                    }, child: const Text('Blur Less'),),
+
+                  ]
             )
+
           ],
         ),
       ),
